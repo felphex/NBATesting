@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "e4a41d7c-3947-43fd-8486-fb29dd313837",
+		"name": "Control Risk QA Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33022382"
+	},
+	"item": [
+		{
+			"name": "Data USA API",
+			"item": [
+				{
+					"name": "Get most recent population in the United States",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/data?drilldowns=Nation&measures=Population&year=latest",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"data"
+							],
+							"query": [
+								{
+									"key": "drilldowns",
+									"value": "Nation"
+								},
+								{
+									"key": "measures",
+									"value": "Population"
+								},
+								{
+									"key": "year",
+									"value": "latest"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the total population for New York County",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/data?geo=05000US36061&measure=Population",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"data"
+							],
+							"query": [
+								{
+									"key": "geo",
+									"value": "05000US36061"
+								},
+								{
+									"key": "measure",
+									"value": "Population"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get unemployment rate at Alameda County, CA in 2021",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/data?geo=16000US0653000&measure=Unemployment&year=2021",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"data"
+							],
+							"query": [
+								{
+									"key": "geo",
+									"value": "16000US0653000"
+								},
+								{
+									"key": "measure",
+									"value": "Unemployment"
+								},
+								{
+									"key": "year",
+									"value": "2021"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get population and poverty rate in Los Angeles, CA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/data?geo=16000US0644000&measure=Population,Poverty%20Rate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"data"
+							],
+							"query": [
+								{
+									"key": "geo",
+									"value": "16000US0644000"
+								},
+								{
+									"key": "measure",
+									"value": "Population,Poverty%20Rate"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get median age in Texas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/data?geo=04000US48&measure=Median Age",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"data"
+							],
+							"query": [
+								{
+									"key": "geo",
+									"value": "04000US48"
+								},
+								{
+									"key": "measure",
+									"value": "Median Age"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get unemployment rate for Illinois",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/data?geo=16000US1714000&measure=Unemployment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"data"
+							],
+							"query": [
+								{
+									"key": "geo",
+									"value": "16000US1714000"
+								},
+								{
+									"key": "measure",
+									"value": "Unemployment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get poverty rate in Harris County, TX",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/data?geo=05000US48201&measure=Poverty%20Rate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"data"
+							],
+							"query": [
+								{
+									"key": "geo",
+									"value": "05000US48201"
+								},
+								{
+									"key": "measure",
+									"value": "Poverty%20Rate"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get population and poverty rate in the United States",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/data?drilldowns=Nation&measures=Population,Poverty%20Rate&year=latest",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"data"
+							],
+							"query": [
+								{
+									"key": "drilldowns",
+									"value": "Nation"
+								},
+								{
+									"key": "measures",
+									"value": "Population,Poverty%20Rate"
+								},
+								{
+									"key": "year",
+									"value": "latest"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the most recent unemployment rate in California",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/data?geo=04000US06&measures=Population,Unemployment&year=latest",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"data"
+							],
+							"query": [
+								{
+									"key": "geo",
+									"value": "04000US06"
+								},
+								{
+									"key": "measures",
+									"value": "Population,Unemployment"
+								},
+								{
+									"key": "year",
+									"value": "latest"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the median age in Florida",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/data?geo=04000US12&measures=Median Age",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"data"
+							],
+							"query": [
+								{
+									"key": "geo",
+									"value": "04000US12"
+								},
+								{
+									"key": "measures",
+									"value": "Median Age"
+								},
+								{
+									"key": "year",
+									"value": "2022",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
