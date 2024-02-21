@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+    	<class name="tests.LogInTest"/>
+      	<!-- these are not working for some reason :(
+      	<class name="tests.MerchandisePurchaseTest"/>
+      	<class name="tests.SignUpTest"/>
+      	<class name="tests.TicketPurchaseTest"/> 
+      	-->
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+<!--remember that test-output\index.html contains the report.html-->
